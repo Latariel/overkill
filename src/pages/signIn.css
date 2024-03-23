@@ -23,7 +23,7 @@
 .txt2{
     text-align: center;
     font-size: 16px;
-padding-top: 8px;
+    padding-top: 8px;
 }
 .reg {
     background-color: white;
@@ -192,6 +192,7 @@ input {
     top: 18px; /* Перемещаем label наверх */
     font-size: 12px; /* Уменьшаем размер шрифта */
 }
+
 
 button a{
     text-decoration: none;

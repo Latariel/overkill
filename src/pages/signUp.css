@@ -1,0 +1,77 @@
+*{
+    background-color: #edeeef;
+    font-family: Lato,Helvetica,Arial,sans-serif,-apple-system;
+    margin: 0;
+    padding: 0;
+}
+
+.reg {
+    background-color: white;
+    position: center;
+    color: #495739;
+    padding-top: 30px;
+    border-radius: 8px;
+}
+.regForm {
+    width: 384px;
+    height: 498px;
+    /*height: 398px;*/
+    background: #ffffff;
+    border-radius: 8px;
+    margin: 70px auto;
+}
+
+.email {
+    border: hidden;
+    padding: 12px 10px;
+    width: 288px;
+    height: 24px;
+    border-radius: 8px;
+    background-color: rgba(245, 247, 250, 1);
+    margin-bottom: 20px;
+    color: rgba(102, 114, 127, 1);
+    margin-left: 16px;
+    margin-top: 30px;
+}
+
+.pass {
+    border: hidden;
+    padding: 12px 10px;
+    width: 288px;
+    height: 24px;
+    border-radius: 8px;
+    background-color: rgba(245, 247, 250, 1);
+    margin-bottom: 20px;
+    color: rgba(102, 114, 127, 1);
+    margin-left: 16px;
+}
+
+.pass2{
+    border: hidden;
+    padding: 12px 10px;
+    width: 288px;
+    height: 24px;
+    border-radius: 8px;
+    background-color: rgba(245, 247, 250, 1);
+    margin-bottom: 20px;
+    color: rgba(102, 114, 127, 1);
+    margin-left: 16px;
+}
+
+.SignUp {
+    background-color: white;
+    text-decoration: none;
+    color: #282c34;
+
+}
+
+.btn1 {
+    background: rgb(144, 201, 110);
+    border-radius: 10px;
+    border: hidden;
+    color: #fff;
+    margin: 30px 10px;
+    padding: 12px 20px;
+    width: 320px;
+    height: 52px;
+}

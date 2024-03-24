@@ -2,14 +2,29 @@ import './signUp.css'
 import './dealer.svg'
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
-
+import {createUserWithEmailAndPassword} from 'firebase/auth'
+import {auth} from "../firebase/firebase";
 
 export const SignUp = () => {
 
     const [email, setEmail] = useState(''); // Состояние для email
     const [password, setPassword] = useState(''); // Состояние для пароля
     const [buttonColor, setButtonColor] = useState('');
+    // const [error, setError] = useState('')
     const navigate = useNavigate();
+
+const handleSignUp = () =>{
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(user);
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+        });
+}
 
 
 
@@ -45,6 +60,7 @@ export const SignUp = () => {
                         <input
                             type="email"
                             required
+                            autoComplete='username'
                             value={email}
                             onChange={handleEmailChange}
                         />
@@ -54,18 +70,16 @@ export const SignUp = () => {
                     </div>
                     <div className='email'>
                         <input type="password"
+                               autoComplete="new-password"
                                required
                                onChange={handlePasswordChange}
                         />
                         <label className={email ? 'placeholder filled' : 'placeholder'}>Пароль</label>
                     </div>
-                    <button className='btn1' style={{backgroundColor: buttonColor}}>
+                    <button className='btn1' style={{backgroundColor: buttonColor}} onClick={handleSignUp}>
                         Зарегистрироваться
                     </button>
                     <button className='btn2'  onClick={handleLoginClick}>  Уже есть аккаунт? Войти</button>
-                    {/*<Link to="/auto" className='btn2'>*/}
-                    {/*    Уже есть аккаунт? Войти*/}
-                    {/*</Link>*/}
                 </form>
             </div>
         );

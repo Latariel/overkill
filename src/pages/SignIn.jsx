@@ -63,7 +63,7 @@ export const SignIn =() => {
                     <button className='btn1' style={{ backgroundColor: buttonColor }} >
                         Войти
                     </button>
-                    <button className='btn2' onClick={handleLoginClick}>Еще нет аккаунта? Зарегестрироваться</button>
+                    <button className='btn2' onClick={handleLoginClick}>Еще нет аккаунта? Зарегистрироваться</button>
                 </form>
         </div>
     );

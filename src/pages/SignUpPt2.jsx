@@ -5,6 +5,9 @@ import {useState} from "react";
 const SecondPart = () => {
 
         const [text, setText] = useState('');
+        const [name, setName] = useState('');
+        const [nameProd, setNameProd] = useState('');
+        const [buttonColor, setButtonColor] = useState('');
         const maxCharacters = 2000; // Максимальное количество символов
 
         const handleInputChange = (e) => {
@@ -14,6 +17,31 @@ const SecondPart = () => {
                 setText(inputValue);
             }
         };
+
+    const handleNameChange = (e) => {
+        setName(e.target.value);
+        updateButtonColor(e.target.value, name);
+
+        const inputValue = e.target.value;
+
+        if (inputValue.length <= maxCharacters) {
+            setText(inputValue);
+        }
+
+    };
+
+    const handleNameProdChange = (e) => {
+        setNameProd(e.target.value);
+        updateButtonColor(nameProd, e.target.value);
+    };
+
+    const updateButtonColor = (nameValue, passwordValue) => {
+        if (nameValue.trim() !== '' && passwordValue.trim() !== '') {
+            setButtonColor('rgba(250, 132, 70, 1)');
+        } else {
+            setButtonColor('');
+        };
+    }
 
 
     return (
@@ -26,41 +54,41 @@ const SecondPart = () => {
                         type="email"
                         required
                         autoComplete='username'
-                        // value={email}
+                        onChange={handleNameChange}
+                        // value={text}
 
                     />
-                    {/*<label >*/}
-                    {/*    Email*/}
-                    {/*</label>*/}
+                    <label className={text ? 'placeholder filled' : 'placeholder'} >
+                        Имя пользователя
+                    </label>
                 </div>
                 <div className='email'>
-                    <input type="password"
+                    <input type="text"
+                           autoComplete="new-password"
+                           required
+                           onChange={handleNameProdChange}
+                    />
+                    <label className={text ? 'placeholder filled' : 'placeholder'}>Название проекта</label>
+                </div>
+                <div className='email'>
+                    <input type="text"
                            autoComplete="new-password"
                            required
 
                     />
-                    {/*<label className={email ? 'placeholder filled' : 'placeholder'}>Пароль</label>*/}
+                    <label className={text ? 'placeholder filled' : 'placeholder'}>Идентификатор проекта</label>
                 </div>
                 <div className='email'>
-                    <input type="password"
-                           autoComplete="new-password"
-                           required
-
-                    />
-                    {/*<label className={email ? 'placeholder filled' : 'placeholder'}>Пароль</label>*/}
-                </div>
-                <div className='email'>
-                    <input
+                    <textarea
                             className='big'
-                            type="password"
                            autoComplete="new-password"
                            required
                             onChange={handleInputChange}
                     />
-                    <p>  {text.length} / {maxCharacters} </p>
-                    {/*<label className={email ? 'placeholder filled' : 'placeholder'}>Пароль</label>*/}
+                    <p className='length'>  {text.length} / {maxCharacters} </p>
+                    <label className={text ? 'placeholder filled' : 'placeholder'}>Описание</label>
                 </div>
-                <button className='btn1'>
+                <button className='btn1' style={{backgroundColor: buttonColor}}>
                    Продолжить
                 </button>
 

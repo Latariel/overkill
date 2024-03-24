@@ -43,7 +43,7 @@
 
 }
 
-.email {
+.text {
     /*border: 2px solid rgba(241, 239, 239, 0.8);*/
     /*margin-top: 24px;*/
     /*margin-left: 24px;*/
@@ -94,7 +94,7 @@ input:focus {
     color: #101010;
     width: 406px;
     height: 56px;
-    margin-top: 40px;
+    margin-top: 24px;
     margin-left: 24px;
 }
 
@@ -111,6 +111,12 @@ input:focus {
 
 }
 
+.length {
+    margin-left: 370px;
+    margin-top: 4px;
+    font-size: 13px;
+    color: rgba(102, 114, 127, 1);
+}
 
 
 input.btn :placeholder-shown+input:placeholder-shown+button,
@@ -132,31 +138,50 @@ input.btn :not(:placeholder-shown)+input .btn1:not(:placeholder-shown)+button {
 input {
 
     font-size: 14px;
-    height: 46px;
-    width: 406px;
+    height: 41px;
+    width: 396px;
     border: 2px solid rgba(241, 239, 239, 0.8);
     border-radius: 15px;
     outline: none;
     margin-top: 12px;
     margin-left: 24px;
+    padding-top: 5px ;
+    padding-left: 10px;
 }
 
 .placeholder {
     position: absolute;
-    top: 45px;
+    top: 30px;
     left: 35px;
     font-size: 14px;
     color: lightslategray;
     pointer-events: none;
     transition: 0.3s;
-}
 
+}
+label{
+    /*text-align: center;*/
+}
 .filled {
     top: 18px; /* Перемещаем label наверх */
     font-size: 12px; /* Уменьшаем размер шрифта */
 }
 
 .big{
-    height: 140px;
-    width: 406px;
+    height: 115px;
+    width: 394px;
+}
+
+textarea{
+    margin-left: 24px;
+    margin-top: 12px;
+    padding-left: 10px;
+    padding-top: 25px;
+    border: 2px solid rgba(241, 239, 239, 0.8);
+    border-radius: 15px;
+    outline: none;
+}
+
+textarea:focus{
+    border-color: rgba(250, 132, 70, 1);
 }

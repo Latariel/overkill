@@ -1,8 +1,10 @@
 import './signUp.css'
 import './dealer.svg'
 import {useState} from "react";
-import {useNavigate} from "react-router-dom";
-import {createUserWithEmailAndPassword} from 'firebase/auth'
+import { useNavigate} from "react-router-dom";
+import {createUserWithEmailAndPassword
+        } from 'firebase/auth'
+// import { useHistory } from 'react-router-dom'
 import {auth} from "../firebase/firebase";
 
 export const SignUp = () => {
@@ -10,21 +12,23 @@ export const SignUp = () => {
     const [email, setEmail] = useState(''); // Состояние для email
     const [password, setPassword] = useState(''); // Состояние для пароля
     const [buttonColor, setButtonColor] = useState('');
-    // const [error, setError] = useState('')
     const navigate = useNavigate();
 
-const handleSignUp = () =>{
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            const user = userCredential.user;
-            console.log(user);
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode, errorMessage);
-        });
-}
+
+    const handleSignUp = () => {
+        // if (!email || !password) return;
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+               console.log(user)
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode, errorMessage);
+            });
+    };
+
 
 
 
@@ -49,6 +53,15 @@ const handleSignUp = () =>{
     const handleLoginClick = () => {
         navigate('/SingIn'); // Переход на страницу /SignIn.jsx при клике на кнопку
     };
+
+
+        // if (user) {
+        //     return <Navigate to='/SignUp'></Navigate>
+        // }
+
+        // const handleSignUpPt2Click = () =>{
+        //     navigate('/SignUp')
+        // }
 
         return (
             <div>
